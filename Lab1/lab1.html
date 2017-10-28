@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="musicManager">
+<head>
+	<title>MusicManager</title>
+
+	<script src="lib/Angular/angular.js">
+		angular.module("musicManager");
+		angular.module("musicManager").controller("musicManagerCtrl", function ($scope){
+			$scope.app = "MusicManager";
+			$scope.artistas = [	{nome: "Marcia Felipe", foto: "link:"}];
+
+			$scope.adicionaArtista = function(artista) {
+			$scope.artista.push(angular.copy(artista));
+
+			};
+
+	});
+
+	</script>
+
+</head>
+
+
+<body>
+	<div>
+		<table class="table">
+			<tr>
+				<th></th>
+				<th>Nome</th>
+				<th>Foto</th>
+			</tr>
+
+			<tr ng-repeat="contato in contatos" >
+				
+				<td>{{artista.nome}}</td>
+				<td>{{artista.link }}</td>
+				
+			</tr>
+		</table>
+
+
+	</div>
+
+
+	<div>
+		<input class="form-control" type="text" ng-model="artista.nome" name="nome" placeholder = "Nome">
+
+		<input class="form-control" type="text" ng-model="artista.link" name="link" placeholder = "Link da foto">
+
+		<button class="btn btn-primary btn-block" ng-click="adicionaArtista(artista)"> Adicionar contato</button>
+ 
+
+	</div>
+
+</body>
+</html>
